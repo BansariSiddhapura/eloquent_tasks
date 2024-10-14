@@ -1,42 +1,55 @@
-<?php  
-	require_once __DIR__."/includes/connection.php";
-	//use Illuminate\Support\Facades\DB;
-	//$customer = Customers::all();
-	
-	$customer = Customers::findMany([2,5,7]);
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="./assets/css/bootstrap.css" rel="stylesheet">
+
+	<title>Document</title>
+</head>
+
+<body>
+	<nav class="navbar navbar-expand-lg bg-body-tertiary">
+		<div class="container-fluid d-flex justify-content-center">
+			<a href="" class="navbar-brand">CRUD WITH ELOQUENT</a>
+		</div>
+	</nav>
+	<div class="container w-75 my-3 d-flex justify-content-end">
+	<a href="form.php" class="btn btn-primary" id="add" type="button">Add +</a>
+	</div>
+	<div class="container w-75 border mt-3 rounded-3 p-3 shadow-sm">
+		<div class="mb-3 d-flex justify-content-center bg-light text-dark rounded-3 pt-2">
+			<p class="fs-4" id="title">Client Table</p>
+			
+		</div>
+		
+		<table class="table table-striped" id="mytable">
+			<thead>
+				<th>ID</th>
+				<th>Name</th>
+				<th>Email</th>
+				<th>City</th>
+				<th>Gender</th>
+				<th>Action</th>
+			</thead>
+			<tbody id="tbody"></tbody>
+		</table>
+	</div>
+</body>
+
+<script src="./assets/js/bootstrap.js"></script>
+<script src="./assets/js/jquery-3.7.1.min.js"></script>
+<script src="./assets/js/custom.js"></script>
+
+</html>
+<?php
+require_once __DIR__ . "/includes/connection.php";
+
+use App\Models\Clients;
+
+//use Illuminate\Support\Facades\DB;
+//$customer = Customers::all();
 
 
-	$customer = Customers :: where('id','2')->delete();    //soft delete column
-	$customer = Customers::withTrashed()->get(); 		   //get with soft deleted rows
-	$customer = Customers::first();						//get first record
-	$customer = Customers::find(10);					
-	$customer = Customers::where('name','Jack Hill')->value('email');  //return email where name='jack hill'
-	$customer = Customers::pluck('email');           // Retrieves a single column's values as an array.
-	$customer= Customers::orderBy('name','asc')->get();  //display all records ordeby name=ascending order
-	$customer= Customers::limit(4)->get();         // display 4 records because of limit is 4
-	//d($customer);
-
-	echo "<pre>";
-	//print_r($customer->toArray());
-	echo "</pre>";
-
-	
-	$order= Orders::where('status','Completed');   //get all records whose status is completed
-	$sql=$order->toSql();
-	$order=$order->get();
-	
-	d($sql);
-
-	// $order= Orders::where('status','Pending')->orWhere('amount','<',100)->get(); // works as OR in sql
-	// $order= Orders::where('amount','>',1)->where('amount','<',100)->get();   //works as AND in sql
-	// $order= Orders::where('status','Completed')->count();   //11 counts records whose status is completed
-	// $order= Orders::sum('amount'); 	// sum of all amounts
-	// $order= Orders::avg('amount');  //return avgrage
-	$order= Orders::create(['customer_id'=>'10','order_date'=>'2024-07-22','amount'=>'500.00','status'=>'Pending']);
-
-
-	echo "<pre>";
-	print_r($order->toArray());
-	echo "</pre>";
-	
 ?>
