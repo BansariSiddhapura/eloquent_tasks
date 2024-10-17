@@ -45,51 +45,27 @@
                 <?php
                 if (!empty($_GET['type'])) {
                     $type = $_GET['type'];
-                    switch ($type) {
-                        case 'getRows':
-                            require_once "1_view.php";
-                            break;
-                        case 'rowSorted':
-                            require_once "2_rowSorted.php";
-                            break;
-                        case 'whereInLikes':
-                            require_once "3_whereInLikes.php";
-                            break;
-                        case 'join':
-                            require_once "4_join.php";
-                            break;
-                        case 'distinctRows':
-                            require_once "5_distinctRows.php";
-                            break;
-                        case 'singleRow':
-                            require_once "6_singleRow.php";
-                            break;
-                        case 'totalCount':
-                            require_once "7_totalCount.php";
-                            break;
-                        case 'count':
-                            require_once "8_count.php";
-                            break;
-                        case 'insertRow':
-                            require_once "9_insert.php";
-                            break;
-                        case 'updateRow':
-                            require_once "10_update.php";
-                            break;
-                        case 'deleteRow':
-                            require_once "11_delete.php";
-                            break;
-                        case 'groupBy':
-                            require_once "12_groupBy.php";
-                            break;
-                     
+
+                    $files=[
+                        'getRows'=>'1_view.php',
+                        'rowSorted'=>'2_rowSorted.php',
+                        'whereInLikes'=>'3_whereInLikes.php',
+                        'join'=>'4_join.php',
+                        'distinctRows'=>'5_distinctRows.php',
+                        'singleRow'=>'6_singleRow.php',
+                        'totalCount'=>'7_totalCount.php',
+                        'count'=>'8_count.php',
+                        'insertRow'=>'9_insert.php',
+                        'updateRow'=>'10_update.php',
+                        'deleteRow'=>'11_delete.php',
+                        'groupBy'=>'12_groupBy.php'
+                    ];
+                    if(array_key_exists($type,$files)){
+                        require_once $files[$type];
+                    }else{
+                        echo "welcome..";
                     }
-                } else {
-                    echo "welcome..";
                 }
-
-
-
                 ?>
             </div>
         </div>

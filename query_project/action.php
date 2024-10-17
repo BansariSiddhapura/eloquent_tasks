@@ -3,7 +3,7 @@ require_once "logic.php";
 
 $myData = new MyData();
 
-if (isset($_POST['action'])) {
+if (!empty($_POST['action'])) {
     //echo $_POST['action'];
     if ($_POST['action'] == 'select') {
 
@@ -15,7 +15,7 @@ if (isset($_POST['action'])) {
         $clientData = [];
         parse_str($_POST['data'], $clientData);
         $data = $myData->insert($clientData);
-       echo json_encode($data);
+        echo json_encode($data);
         //echo ($data) ?  json_encode(['message' => 'insert success']) :  json_encode(['message' => 'can not insert']);
     }
     

@@ -81,6 +81,7 @@ $(function () {
       data: {
         action: "select",
         id: id,
+       
       },
       dataType: "json",
       success: function (response) {
