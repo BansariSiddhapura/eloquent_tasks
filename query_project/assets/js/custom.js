@@ -127,8 +127,7 @@ $(function () {
         $("#myForm").trigger("reset");
         //$('input[name="id"]').val("");
         alert(response.message);
-        if (type == "updateRow") {
-        
+        if (type == "updateRow") {      
           window.location.href = "index.php?type=updateRow";
         } else {
       

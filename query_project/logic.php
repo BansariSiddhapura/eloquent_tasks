@@ -62,15 +62,9 @@ class MyData
             Clients::create(['name' => $clientData['name'], 'email' => $clientData['email'], 'password' => $clientData['pass'], 'city' => $clientData['city'], 'gender' => $clientData['gender']]);
 
         if ($query) {
-            return [
-                'status' => true,
-                'message' => !empty($user_id) ? 'User Updated Successfully' : 'User Inserted Successfully'
-            ];
+            return ['message' => !empty($user_id) ? 'User Updated Successfully' : 'User Inserted Successfully'];
         } else {
-            return [
-                'status' => false,
-                'message' => "Something Went Wrong!"
-            ];
+            return ['message' => "Something Went Wrong!"];
         }
     }
     function delete($id)

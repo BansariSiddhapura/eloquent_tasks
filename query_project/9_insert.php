@@ -52,32 +52,5 @@
             </div>
         </form>
     </div>
-
-    <script>
-        // $("body").on("submit", "#myForm", function(e) {
-        //     e.preventDefault();
-        //     var formData = $(this).serialize();
-        //     //console.log(formData);
-
-        //     $.ajax({
-        //         type: "post",
-        //         url: "action.php",
-        //         data: {
-        //             action: "insert",
-        //             data: formData,
-        //         },
-        //         dataType: "json",
-        //         success: function(response) {
-        //             $("#myForm").trigger("reset");
-        //             //$('input[name="id"]').val("");
-        //             alert(response.message);
-        //             window.location.href = "index.php?id=9s";
-        //         },
-        //     });
-        // });
-    </script>
-
 </body>
-
-
 </html>

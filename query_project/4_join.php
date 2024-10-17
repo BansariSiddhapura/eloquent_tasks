@@ -11,7 +11,6 @@
     <script src="./assets/js/jquery-3.7.1.min.js"></script>
 
 </head>
-
 <body>
     <div class="container my-4 py-3 border d-flex fs-4 gap-3 justify-content-center align-items-center flex-column shadow-sm">
            <span>SELECT ac.name,ac.email,ac.city,c.hobbies FROM ajax_client AS ac JOIN client as c WHERE ac.name=c.name;</span>
