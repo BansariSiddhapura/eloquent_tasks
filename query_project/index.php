@@ -21,8 +21,8 @@
                     <span class="fs-3">Custome model</span>
                     </div>
                     <div class="d-flex gap-2">
-                        <input type="search" class="form-control">
-                        <button type="submit" class="btn btn-dark">Search</button>
+                        <input type="search" class="form-control" name='search_item' id='search_item'>
+                        <button class="btn btn-dark" name='search_btn' id='search_btn'>Search</button>
                     </div>
 
                 </div>
@@ -47,18 +47,18 @@
                     $type = $_GET['type'];
 
                     $files=[
-                        'getRows'=>'1_view.php',
-                        'rowSorted'=>'2_rowSorted.php',
-                        'whereInLikes'=>'3_whereInLikes.php',
-                        'join'=>'4_join.php',
-                        'distinctRows'=>'5_distinctRows.php',
-                        'singleRow'=>'6_singleRow.php',
-                        'totalCount'=>'7_totalCount.php',
-                        'count'=>'8_count.php',
-                        'insertRow'=>'9_insert.php',
-                        'updateRow'=>'10_update.php',
-                        'deleteRow'=>'11_delete.php',
-                        'groupBy'=>'12_groupBy.php'
+                        'getRows'=>'./allFiles/1_view.php',
+                        'rowSorted'=>'./allFiles/2_rowSorted.php',
+                        'whereInLikes'=>'./allFiles/3_whereInLikes.php',
+                        'join'=>'./allFiles/4_join.php',
+                        'distinctRows'=>'./allFiles/5_distinctRows.php',
+                        'singleRow'=>'./allFiles/6_singleRow.php',
+                        'totalCount'=>'./allFiles/7_totalCount.php',
+                        'count'=>'./allFiles/8_count.php',
+                        'insertRow'=>'./allFiles/9_insert.php',
+                        'updateRow'=>'./allFiles/10_update.php',
+                        'deleteRow'=>'./allFiles/11_delete.php',
+                        'groupBy'=>'./allFiles/12_groupBy.php'
                     ];
                     if(array_key_exists($type,$files)){
                         require_once $files[$type];
