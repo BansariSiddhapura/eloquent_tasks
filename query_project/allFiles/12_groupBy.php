@@ -1,6 +1,6 @@
 <?php require_once "./includes/header.php" ?>
 <div class="container my-4 py-3 border d-flex fs-3 justify-content-center align-items-center flex-column shadow-sm">
-    <?php require_once "./queries.php"; ?>
+    <span id="query_string<?= $_GET['type'] ?>"></span>
 </div>
 
 <div class='container'>

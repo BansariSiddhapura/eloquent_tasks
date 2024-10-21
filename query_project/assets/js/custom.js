@@ -5,7 +5,7 @@ $(function () {
     //var search = search_item;
     return ajaxCall(search_item);
   });
-
+  
   ajaxCall();
   function ajaxCall(search) {
     // console.log(search);
@@ -21,6 +21,8 @@ $(function () {
       },
       dataType: "json",
       success: function (response) {
+       
+        
         //console.log(response);
         //console.log(type);
 
@@ -41,9 +43,10 @@ $(function () {
                     <td>${condition}</td>
                 </tr>`
             );
+            $(`#query_string${type}`).html(response.query_string);
           });
         } else if (type == "join") {
-          $.each(response, function (i, v) {
+          $.each(response.query, function (i, v) {
             $("#tbody").append(
               `<tr>
                  <td>${v.id}</td>
@@ -54,10 +57,11 @@ $(function () {
                 <td>${v.hobbies}</td>
              </tr>`
             );
+            $(`#query_string${type}`).html(response.query_string);
           });
         } else if (type == "groupBy") {
           $("#tbody").empty("");
-          $.each(response, function (i, v) {
+          $.each(response.query, function (i, v) {
             var search_item =
               search == "name"
                 ? v.name
@@ -73,10 +77,11 @@ $(function () {
                     <td>${v.number_of_names}</td>
                 </tr>`
             );
+            $(`#query_string${type}`).html(response.query_string);
           });
         } else {
           $("#tbody").empty("");
-          $.each(response, function (i, v) {
+          $.each(response.query, function (i, v) {
             var id = typeof v.id == "undefined" ? "-" : v.id;
             var name = typeof v.name == "undefined" ? "-" : v.name;
             var email = typeof v.email == "undefined" ? "-" : v.email;
@@ -90,8 +95,12 @@ $(function () {
                  <td>${city}</td>
                  <td>${gender}</td>
               </tr>`
-            );
+            );   
+            $(`#query_string${type}`).html(response.query_string);
+           
           });
+          var count_city= search ? search : 'rajkot';
+          $('#count_city').html(`COUNT OF '${count_city}':${response.count_result}`)
         }
       },
     });

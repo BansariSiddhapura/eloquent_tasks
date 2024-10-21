@@ -16,7 +16,7 @@ if (isset($_GET['type'])) {
                   <span>Clients::whereLike('name','%vi%')->get()</span>";
             break;
         case 'join':
-            echo "<span>SELECT ac.name,ac.email,ac.city,c.hobbies FROM ajax_client AS ac JOIN client as c WHERE ac.name=c.    name</span>
+            echo "<span class='fs-4'>SELECT ac.name,ac.email,ac.city,c.hobbies FROM ajax_client AS ac JOIN client as c WHERE ac.name=c.    name</span>
                  <span>Clients::join('client', 'ajax_client.name', '=', 'client.name')<br/>->select('ajax_client.id','ajax_client.name','client.hobbies',<br/>'ajax_client.email','ajax_client.city','ajax_client.gender')->get()</span>";
             break;
         case 'distinctRows':

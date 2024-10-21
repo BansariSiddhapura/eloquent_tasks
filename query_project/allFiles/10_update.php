@@ -1,6 +1,6 @@
 <?php require_once "./includes/header.php" ?>
     <div class="container my-4 py-3 border d-flex fs-3 justify-content-center align-items-center flex-column shadow-sm">
-             <?php require_once "./queries.php"; ?>
+    <span>UPDATE : Clients::where('id', $user_id)->update(['name' => $clientData['name'], 'email' => $clientData['email'], 'password' => $clientData['pass'], 'city' => $clientData['city'], 'gender' => $clientData['gender']]) :</span>
     </div> 
     <!-- Modal -->
     <div class="modal fade" id="updateForm" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

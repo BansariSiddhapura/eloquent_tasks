@@ -5,13 +5,11 @@ use App\Models\Clients;
 require_once "./includes/connection.php";
 require_once "./includes/header.php" ?>
 <div class="container my-4 py-3 border d-flex fs-3 justify-content-center align-items-center flex-column shadow-sm">
-    <?php require_once "./queries.php"; ?>
+    <span id="query_string<?= $_GET['type'] ?>"></span>
 </div>
 <div class='container fs-2 d-flex justify-content-center align-items-center'>
     <div class="card">
-        <div class="card-body">
-            <?php echo "COUNT OF 'Rajkot': " . Clients::where('city', 'rajkot')->count() ?>
-        </div>
+        <div class="card-body" id="count_city"></div>
     </div>
 </div>
 <div class='container'>

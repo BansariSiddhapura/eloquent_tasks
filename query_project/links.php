@@ -14,10 +14,10 @@
     <li><a href="index.php?type=updateRow" class="btn btn-dark text-decoration-none text-light">Update Row</a></li>
     <li><a href="index.php?type=deleteRow" class="btn btn-dark text-decoration-none text-light">Delete Row</a></li>
     <li><a href="index.php?type=groupBy" class="btn btn-dark text-decoration-none text-light">Group By</a></li>
-    <li><a href="#" class="btn btn-dark text-decoration-none text-light">Single Value</a></li>
+    <!-- <li><a href="#" class="btn btn-dark text-decoration-none text-light">Single Value</a></li>
 
     <li><a href="#" class="btn btn-dark text-decoration-none text-light">Custom Query</a></li>
     <li><a href="#" class="btn btn-dark text-decoration-none text-light">Get Result</a></li>
     <li><a href="#" class="btn btn-dark text-decoration-none text-light">Check Availability</a></li>
-    <li><a href="#" class="btn btn-dark text-decoration-none text-light">Find in Set</a></li>
+    <li><a href="#" class="btn btn-dark text-decoration-none text-light">Find in Set</a></li> -->
 </ul>
